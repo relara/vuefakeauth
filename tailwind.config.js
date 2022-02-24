@@ -4,7 +4,11 @@ module.exports = {
   darkMode: false,
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      minHeight: {
+        "screen-nonav": "calc(100vh - 88px)",
+      } 
+    },
   },
   plugins: [],
 }
