@@ -1,6 +1,13 @@
-<script>
+<script setup>
+import { useRouter } from "vue-router";
 import useAuth from "../composable/useAuth";
 const { isAuthenticated, logout } = useAuth();
+
+const router = useRouter();
+
+const loggingOut = () => {
+  router.push("/");
+};
 </script>
 
 <template>
@@ -24,7 +31,7 @@ const { isAuthenticated, logout } = useAuth();
               <router-link :to="{ name: 'Secret' }">
               <li class="px-4 py-8 cursor-pointer hover: hover:bg-indigo-500 hover:text-indigo-80">Secret</li>  
               </router-link>
-              <button @click="logout">
+              <button @click="loggingOut">
                 <li class="px-4 py-8 cursor-pointer hover: hover:bg-indigo-500 hover:text-indigo-80">Logout</li> 
               </button> 
               </div>

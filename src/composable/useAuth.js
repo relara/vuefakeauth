@@ -8,9 +8,9 @@ const usersFromDB = [{ username: "admin", password: "admin", name: "Administrato
 
 const useAuth = () => {
     const login = (username, password) => {
-        const user = usersFromDB.find((user) => user.username === username && user.password);
-        if (user) { isAuthenticated.value = true;
-            user.value = user.name;
+        const userFromDB = usersFromDB.find((user) => user.username === username && user.password);
+        if (userFromDB) { isAuthenticated.value = true;
+            user.value = userFromDB.name;
         };
     };
     const logout = () => {
